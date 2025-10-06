@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>예민함 진단 테스트 (HSP)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2e0f1f0c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 시작 페이지 -->
+    <div id="main-page">
+      <div class="start-icon">🧠</div>
+      <h1>예민함을 확인하는 HSP 테스트</h1>
+      <p>당신의 마음은 얼마나 섬세할까요?<br>아래 버튼을 눌러 시작해보세요 💙</p>
+      <button id="start-btn">테스트 시작하기</button>
+    </div>
+
+    <!-- 질문 페이지 -->
+    <div id="question-page" style="display: none;">
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+        <div id="progress-text">0 / 15</div>
+      </div>
+      <h2 id="question-text">질문이 여기에 표시됩니다.</h2>
+      <div id="answer-buttons"></div>
+    </div>
+
+    <!-- 결과 페이지 -->
+    <div id="result-page" style="display: none;">
+      <div class="result-icon" id="result-emoji">🌤️</div>
+      <h2 id="result-title">결과 제목</h2>
+      <p id="result-description">결과 설명이 여기에 표시됩니다.</p>
+      <button id="restart-btn">다시 테스트하기 🔁</button>
+      <!-- 결과창 하단에 추가 -->
+      <button class="btn" onclick="window.open('https://ieum.ssu.ac.kr', '_blank')">이음터 페이지로 가기
+      </button>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* 기본 설정 */
+body {
+  font-family: 'Jua', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #cfd9ff 0%, #e0ecff 100%);
+}
+
+/* 전체 컨테이너 */
+#app {
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 50, 0.2);
+  text-align: center;
+}
+
+/* 제목 */
+h1, h2, h3 {
+  color: #3f51b5;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* 아이콘 */
+.start-icon, .result-icon {
+  font-size: 3em;
+  color: #3f51b5;
+  margin-bottom: 10px;
+  animation: bounce 1.5s infinite;
+}
+
+/* 버튼 */
+button {
+  padding: 15px 25px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #5c6bc0;
+  color: white;
+  font-size: 1.1em;
+  transition: all 0.3s;
+  width: 90%;
+  box-shadow: 0 5px 0 #3f51b5;
+}
+button:hover {
+  background-color: #3f51b5;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #2f3e9e;
+}
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #3f51b5;
+}
+
+/* 진행 바 */
+#progress-container {
+  width: 100%;
+  background-color: #e3e3e3;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 25px;
+  overflow: hidden;
+}
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #7986cb;
+  transition: width 0.4s ease-in-out;
+}
+#progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #333;
+  z-index: 10;
+}
+
+/* 애니메이션 */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
