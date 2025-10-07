@@ -30,6 +30,7 @@ const progressText = document.getElementById("progress-text");
 const resultEmoji = document.getElementById("result-emoji");
 const resultTitle = document.getElementById("result-title");
 const resultDesc = document.getElementById("result-description");
+const resultFeedback = document.getElementById("result-feedback"); // ✅ 새로 추가된 부분
 
 // 시작 버튼
 document.getElementById("start-btn").addEventListener("click", () => {
@@ -38,7 +39,6 @@ document.getElementById("start-btn").addEventListener("click", () => {
   current = 0;
   score = 0;
   loadQuestion();
-});
 
 // 답변 버튼 생성
 function loadQuestion() {
@@ -80,35 +80,41 @@ function updateProgress() {
 }
 
 // 결과 표시
+// 결과 표시
 function showResult() {
   questionPage.style.display = "none";
   resultPage.style.display = "block";
 
-  let emoji = "☀️";
-  let title = "햇살 마음형";
-  let desc = "당신의 마음은 안정적이에요. 잔잔한 햇살이 머물고 있습니다 ☀️";
+  let emoji = "🌞";
+  let title = "튼튼한 마음형";
+  let desc = "감각이 섬세하지만 외부 자극에 크게 흔들리지 않는 편이에요.";
+  let feedback = "“당신은 감정의 파도 속에서도 중심을 잘 잡는 사람이에요. 안정감이 당신의 큰 힘이에요.”";
 
-  if (score >= 20 && score < 30) {
+  if (score >= 8 && score < 14) {
     emoji = "🌤️";
-    title = "흐림 마음형";
-    desc = "조금의 구름이 마음을 덮고 있어요. 잠시 쉬어가도 괜찮아요 🍵";
-  } else if (score >= 30 && score < 40) {
+    title = "균형감각형 HSP";
+    desc = "감정이 풍부하면서도 환경에 따라 적절히 조절할 수 있는 타입이에요.";
+    feedback = "“당신의 민감함은 공감 능력의 원천이에요. 때로는 쉬어가며 그 감각을 잘 돌봐주세요.”";
+  } else if (score >= 14 && score < 20) {
     emoji = "🌧️";
-    title = "비 마음형";
-    desc = "마음이 지쳐있어요. 감정의 빗방울이 떨어지는 중이에요 ☔";
-  } else if (score >= 40) {
+    title = "감정 공명형 HSP";
+    desc = "타인의 감정과 분위기에 강하게 반응하고 쉽게 피로를 느낄 수 있어요.";
+    feedback = "“세상에 공감이 많은 당신, 그만큼 마음의 에너지도 많이 쓰고 있어요. 스스로를 위한 ‘정지 시간’을 자주 주세요.”";
+  } else if (score >= 20) {
     emoji = "⛈️";
-    title = "폭풍 마음형";
-    desc = "지금은 감정의 폭풍 속에 있어요. 혼자 감당하지 말고 도움을 받아보세요 🌱";
+    title = "초민감형 HSP";
+    desc = "감각과 정서가 매우 예민해 세상의 소리를 깊게 받아들이는 타입이에요.";
+    feedback = "“당신의 감수성은 선물이에요. 하지만 그 선물을 지키려면 ‘조용한 공간’과 ‘마음의 안전지대’가 꼭 필요해요.”";
   }
 
   resultEmoji.textContent = emoji;
   resultTitle.textContent = title;
   resultDesc.textContent = desc;
+  resultFeedback.textContent = feedback;
+
+  // ✅ 이제 appendChild 대신 한 번만 문구 세팅
+  document.getElementById("extra-advice").textContent =
+    "최근 신경 쓰이거나 스트레스 받는 일이 있진 않았나요? 생각이 많고 힘들 땐 너무 고민하지 말고 상담을 받아보는 것도 좋은 방법이에요 🌱";
 }
 
-// 다시 시작
-document.getElementById("restart-btn").addEventListener("click", () => {
-  resultPage.style.display = "none";
-  mainPage.style.display = "block";
 });
