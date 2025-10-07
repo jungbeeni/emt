@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,6 +18,7 @@
       <button id="start-btn">테스트 시작하기</button>
     </div>
 
+
     <!-- 질문 페이지 -->
     <div id="question-page" style="display: none;">
       <div id="progress-container">
@@ -27,18 +29,26 @@
       <div id="answer-buttons"></div>
     </div>
 
+
     <!-- 결과 페이지 -->
     <div id="result-page" style="display: none;">
       <div class="result-icon" id="result-emoji">🌤️</div>
       <h2 id="result-title">결과 제목</h2>
       <p id="result-description">결과 설명이 여기에 표시됩니다.</p>
-      <button id="restart-btn">다시 테스트하기 🔁</button>
+      <p id="result-description"></p>
+      <p id="result-feedback" class="feedback-text"></p>
+      <p id="extra-advice" class="extra-advice"></p> <!-- 미리 넣어둠 -->
+
+      <button id="restart-btn" onclick="location.reload();">다시 테스트하기 🔁</button>
       <!-- 결과창 하단에 추가 -->
       <button class="btn" onclick="window.open('https://ieum.ssu.ac.kr', '_blank')">이음터 페이지로 가기
       </button>
+
 
     </div>
   </div>
   <script src="script.js"></script>
 </body>
 </html>
+
+
