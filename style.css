@@ -91,6 +91,22 @@ button:active {
   color: #333;
   z-index: 10;
 }
+.feedback-text {
+  font-style: italic;
+  color: #2d0b94;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.extra-advice {
+  margin-top: 24px;
+  color: #d74747;
+  background: #f7f7f7;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
 
 /* 애니메이션 */
 @keyframes bounce {
